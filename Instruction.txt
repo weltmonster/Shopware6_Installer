@@ -1,7 +1,7 @@
 First install the Shopware/shopware+Webmail using 
 
 
-bash <(curl -s https://github.com/weltmonster/Shopware6_Installer/blob/main/main.sh)
+bash <(curl -s https://raw.github.com/weltmonster/Shopware6_Installer/blob/main/main.sh)
 
 SSL FIX:
 goto cloudflare(CL) and search page rule
