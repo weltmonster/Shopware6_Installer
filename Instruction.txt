@@ -1,0 +1,17 @@
+First install the Shopware/shopware+Webmail using 
+
+
+bash <(curl -s https://raw.githubusercontent.com/MuhammadUsamaMX/shopware_installation/main/main.sh)
+
+
+goto cloudflare(CL) and search page rule
+Create Page Rule
+  In URL Add domain_name with www (www.domain.com/*)
+
+  in Then the settings are: > Select Forwarding URL > Select status code (required) 301
+  
+  in destination URL https://domain.com/
+  
+  Save and Deploy the rule
+  
+  Proxied the IP in CL
