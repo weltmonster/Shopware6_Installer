@@ -15,6 +15,12 @@ Always Use HTTPS
 After it 
 Proxied the IP in CL
 
+Apache2 FIX:
+Delete /var/www/html and these two configurations
+root@ubuntu-2gb:/etc/apache2/sites-available# ll
+-rw-r--r-- 1 root root 1332 May 3 2023 000-default.conf
+-rw-r--r-- 1 root root 6338 May 3 2023 default-ssl.conf
+
 
 1. Domain Kaufen
 2. CloudFlare Account erstellen und die Nameserver ändern, 3 entries ersten mit folgenden Inhalt:
