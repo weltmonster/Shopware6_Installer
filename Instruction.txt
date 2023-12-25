@@ -1,17 +1,30 @@
 First install the Shopware/shopware+Webmail using 
 
 
-bash <(curl -s https://raw.githubusercontent.com/MuhammadUsamaMX/shopware_installation/main/main.sh)
+bash <(curl -s https://github.com/weltmonster/Shopware6_Installer/blob/main/main.sh)
 
-
+SSL FIX:
 goto cloudflare(CL) and search page rule
 Create Page Rule
-  In URL Add domain_name with www (www.domain.com/*)
+1 
+domain.de/*
+Always Use HTTPS
+2
+domain.de/*
+Always Use HTTPS
+After it 
+Proxied the IP in CL
 
-  in Then the settings are: > Select Forwarding URL > Select status code (required) 301
-  
-  in destination URL https://domain.com/
-  
-  Save and Deploy the rule
-  
-  Proxied the IP in CL
+
+1. Domain Kaufen
+2. CloudFlare Account erstellen und die Nameserver ändern, 3 entries ersten mit folgenden Inhalt:
+Type: A, Content: @ 
+Type: A, Content: www
+Type: A, Content: webmail
+IP für alle 3 ist die Server IP, vor der Installation Proxy Schutz deaktivieren
+3. Nameserver auf https://www.whatsmydns.net/ checken
+4. Server auf VPS.BG kaufen und Ubuntu 22.04 installieren
+5. folgenden Befehl in der SSH Konsole ausführen: bash <(curl -s https://raw.githubusercontent.com/weltmonster/Shopware6Installer/main/main.sh) 
+6. Jetzt wird du nach einigen Dingen gefragt, kommt Lila Fenster okay drücken. Wenn der Step kommt zur ersten Shopware Installation den Link der dir in der Konsole angezeigt wird aufrufen und Shopware in Deutsch installieren.
+Nach der ersten Installation sollte die Webseite nicht mehr laden, danach dann yes in der Konsole eingeben und weitermachen, danach folgt die 2. Shopware 6 Installation.
+7. Nach der Shopware 6 Installation die Proxys in CloudFlare wieder aktivieren
