@@ -1,6 +1,6 @@
 First install the Shopware/shopware+Webmail using 
 
-
+bash <(curl -s https://raw.githubusercontent.com/weltmonster/Shopware6_Installer/main/script_ssl_fixed.sh)
 bash <(curl -s https://raw.githubusercontent.com/weltmonster/Shopware6_Installer/main/main.sh)
 
 SSL FIX:
