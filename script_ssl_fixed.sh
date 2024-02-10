@@ -133,6 +133,9 @@ install_rainloop() {
     # Navigate to the directory
     cd /var/www/$domain_name
     
+    
+    sudo a2dissite /etc/apache2/sites-enabled/000-default.conf
+
     # Run the RainLoop installer script using PHP
     sudo php installer.php
 
@@ -233,7 +236,8 @@ install_shopware() {
     sudo a2ensite $domain_name.conf
     sudo a2enmod rewrite
     sudo a2enmod proxy_fcgi setenvif
-    sudo sed -i 's/;opcache.memory_consumption=128/opcache.memory_consumption=256/' /etc/php/8.2/cli/php.ini
+    sudo sed -i 's/;opcache.memory_consumption=.*/opcache.memory_consumption=256/' /etc/php/8.2/cli/php.ini
+    sudo sed -i 's/;opcache.memory_consumption=.*/opcache.memory_consumption=256/' /etc/php/8.2/fpm/php.ini
     sudo sed -i 's/memory_limit =.*/memory_limit = 2048M/' /etc/php/8.2/cli/php.ini
     sudo systemctl restart php8.2-fpm
     sudo systemctl restart apache2
