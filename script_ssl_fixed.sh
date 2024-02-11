@@ -134,7 +134,7 @@ install_rainloop() {
     cd /var/www/$domain_name
     
     
-    sudo a2dissite /etc/apache2/sites-enabled/000-default.conf
+    rm -rf /etc/apache2/sites-enabled/000-default.conf
 
     # Run the RainLoop installer script using PHP
     sudo php installer.php
@@ -232,7 +232,7 @@ install_shopware() {
 
 </VirtualHost>" | sudo tee $vhost_file
 
-    sudo a2dissite /etc/apache2/sites-enabled/000-default.conf
+    rm -rf /etc/apache2/sites-enabled/000-default.conf
     sudo a2ensite $domain_name.conf
     sudo a2enmod rewrite
     sudo a2enmod proxy_fcgi setenvif
