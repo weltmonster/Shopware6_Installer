@@ -196,7 +196,7 @@ install_shopware() {
     sudo sed -i 's/upload_max_filesize = .*/upload_max_filesize = 20M/' /etc/php/8.2/fpm/php.ini
     sudo sed -i 's/max_execution_time = .*/max_execution_time = 300/' /etc/php/8.2/fpm/php.ini
     sudo mkdir -p /var/www/$domain_name
-    sudo wget https://github.com/weltmonster/Shopware6_Installer/blob/main/shopware-installer.phar%20(2).php -P /var/www/$domain_name
+    sudo wget https://github.com/weltmonster/Shopware6_Installer/blob/main/shopware-installer.php -P /var/www/$domain_name
     sudo chown -R www-data:www-data /var/www/$domain_name
     sudo chmod -R 755 /var/www/$domain_name
     vhost_file="/etc/apache2/sites-available/$domain_name.conf"
